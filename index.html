@@ -205,6 +205,9 @@
   .footer-col ul a:hover { color:var(--cream); }
   .footer-bottom { border-top:1px solid rgba(245,239,224,0.1); padding-top:1.5rem; margin-top:3rem; font-size:0.75rem; opacity:0.4; text-align:center; grid-column:1/-1; }
 
+  .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+  .menu-toggle span { width: 22px; height: 2px; backround: var(--warm-dark); transition: 0.3s; }
+
   /* =========================
    MOBILE OPTIMIERUNG
    ========================= */
@@ -212,24 +215,19 @@
   @media (max-width: 768px) {
 
   /* ================= NAV ================= */
-  nav {
-    padding: 0.9rem 1rem;
-  }
+  
+  .menu-toggle { display: flex; }
 
-  .nav-logo {
-    font-size: 1.1rem;
-    line-height: 1.2;
-  }
+  nav { padding: 0.9rem 1rem; }
+
+  .nav-logo { font-size: 1.1rem; line-height: 1.2; }
 
   /* Mobile Navigation kompakter */
-  .nav-links {
-    display: none; /* bewusst ausgeblendet für clean mobile UX */
-  }
 
-  .nav-cta {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.7rem;
-  }
+  .nav-links { position: fixed; top: 0; right: 0; height: 100vh; width: 70%; backround: var(--cream); flex.direction: column; padding: 6rem 2rem; gap: 2rem;
+               transform: translateX(100%); transition: transform 0.4s ease; z-index: 300; }
+
+  .nav-links.open { transform: translateX(0); }
 
   /* ================= HERO ================= */
   .hero-content {
@@ -436,7 +434,11 @@
     <li><a href="#reservation">Reservierung</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
-  <button class="nav-cta">Tisch reservieren</button>
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -747,6 +749,18 @@ function setActiveDots(container, dots, itemSelector) {
 // init
 setActiveDots(gallery, galleryDots, 'img');
 setActiveDots(testi, testiDots, '.testi-card');
+
+   // ================= MOBILE MENU TOGGLE =================
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+  });
+}
 
 </script>
 </body>
