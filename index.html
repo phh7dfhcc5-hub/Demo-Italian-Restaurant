@@ -205,18 +205,18 @@
   .footer-col ul a:hover { color:var(--cream); }
   .footer-bottom { border-top:1px solid rgba(245,239,224,0.1); padding-top:1.5rem; margin-top:3rem; font-size:0.75rem; opacity:0.4; text-align:center; grid-column:1/-1; }
 
-  .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
-  .menu-toggle span { width: 30px; height: 3px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
-                      transform-origin: center; }
+  .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; z-index: 400; position: relative; }
+  .menu-toggle span { width: 30px; height: 3px; background: var(--cream); transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+                      transform-origin: center; z-index: 400; }
    nav { color: var(--cream); }
    nav.scrolled { color: var(--warm-dark); }
   .menu-toggle:hover span { background: var(--gold); }
   nav.scrolled .menu-toggle span { background: var(--warm-dark); }
+  nav.scrolled:not(:has(.menu-toggle.active)) .menu-toggle span { background: var(--warm-dark); }
   .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
   .menu-toggle.active span:nth-child(2) { opacity: 0; }
   .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-  .menu-toggle span { transition: transform 0.3s ease, opacity 0.3s ease; }
-  .menu-toggle span { transform-origin: center; }
+
   /* =========================
    MOBILE OPTIMIERUNG
    ========================= */
@@ -514,7 +514,7 @@
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
   <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=900&q=80" alt="Rustikales Interieur">
-  <img src="https://images.unsplash.com/photo-1473093226555-0f258be8c8b0?w=500&q=80" alt="Frische Pasta">
+  <img src="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Frische Pasta">
   <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=500&q=80" alt="Wein">
   <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="Pizza">
 </div>
@@ -534,7 +534,7 @@
       <p class="menu-price">€ 8,50</p>
     </div>
     <div class="menu-item reveal d2">
-      <img class="menu-img" src="https://images.unsplash.com/photo-1551183053-bf91798d454f?w=600&q=80" alt="Tagliatelle Ragù">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tagliatelle Ragù">
       <p class="menu-category">Primo</p>
       <p class="menu-name">Tagliatelle al Ragù</p>
       <p class="menu-desc">Handgemachte Eiernudeln mit langsam geschmortem Rindfleisch-Ragù nach Nonnas Originalrezept.</p>
