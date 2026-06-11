@@ -206,8 +206,9 @@
   .footer-bottom { border-top:1px solid rgba(245,239,224,0.1); padding-top:1.5rem; margin-top:3rem; font-size:0.75rem; opacity:0.4; text-align:center; grid-column:1/-1; }
 
   .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
-  .menu-toggle span { width: 22px; height: 2px; background: var(--warm-dark); transition: 0.3s; }
-
+  .menu-toggle span { width: 22px; height: 2px; background: var(--cream); transition: 0.3s; }
+  .menu-toggle:hover span { background: var(--gold); }
+  nav.scrolled .menu-toggle span { background: var(--warm-dark); }
   /* =========================
    MOBILE OPTIMIERUNG
    ========================= */
