@@ -206,7 +206,10 @@
   .footer-bottom { border-top:1px solid rgba(245,239,224,0.1); padding-top:1.5rem; margin-top:3rem; font-size:0.75rem; opacity:0.4; text-align:center; grid-column:1/-1; }
 
   .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
-  .menu-toggle span { width: 30px; height: 3px; background: var(--cream); transition: 0.3s; }
+  .menu-toggle span { width: 30px; height: 3px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+                      transform-origin: center; }
+   nav { color: var(--cream); }
+   nav.scrolled { color: var(--warm-dark); }
   .menu-toggle:hover span { background: var(--gold); }
   nav.scrolled .menu-toggle span { background: var(--warm-dark); }
   .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
