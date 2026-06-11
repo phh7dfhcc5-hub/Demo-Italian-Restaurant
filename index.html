@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,12 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 100%; overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
-
-* { min-width: 0; box-sizing: border-box; }
-body { -webkit-text-size-adjust: 100%; }
-
   :root {
     --cream: #F5EFE0; --warm-dark: #1C1208; --terracotta: #C4622D;
     --olive: #6B7A2A; --gold: #C9983A; --text-muted: #6B5B42;
@@ -79,7 +73,7 @@ body { -webkit-text-size-adjust: 100%; }
 
   /* ── HERO ── */
   .hero {
-    min-height: 100svh; position:relative; overflow:hidden;
+    min-height: 100vh; position:relative; overflow:hidden;
     display:flex; align-items:center;
   }
   .hero-bg {
@@ -173,10 +167,6 @@ body { -webkit-text-size-adjust: 100%; }
   .testi-text { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; line-height:1.7; color:var(--warm-dark); margin-bottom:1.2rem; }
   .testi-author { font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); }
 
-.menu-item, .testi-card {
-  min-width: 0; }
-.menu-grid, .about, .reservation, .testi-grid { min-width: 0; }
-
   /* ── PARALLAX QUOTE ── */
   .quote-section {
     position:relative; overflow:hidden; padding:9rem 4rem;
@@ -214,115 +204,6 @@ body { -webkit-text-size-adjust: 100%; }
   .footer-col ul a { font-size:0.83rem; color:rgba(245,239,224,0.5); text-decoration:none; transition:color 0.2s; }
   .footer-col ul a:hover { color:var(--cream); }
   .footer-bottom { border-top:1px solid rgba(245,239,224,0.1); padding-top:1.5rem; margin-top:3rem; font-size:0.75rem; opacity:0.4; text-align:center; grid-column:1/-1; }
-
-/* VOLLSTÄNDIGE SPEISEKARTE */
-.full-menu{
-  padding:7rem 2rem;
-  max-width:1100px;
-  margin:auto;}
-.menu-list-wrapper{
-  display:flex;
-  flex-direction:column;
-  gap:3rem;}
-.menu-category-block{
-  background:white;
-  padding:2rem;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);}
-.menu-category-block h3{
-  font-family:'Cormorant Garamond', serif;
-  font-size:2rem;
-  margin-bottom:1.5rem;
-  color:var(--terracotta);}
-.menu-list-item{
-  display:flex;
-  justify-content:space-between;
-  gap:2rem;
-  padding:1.3rem 0;
-  border-bottom:1px solid rgba(0,0,0,0.08);}
-.menu-list-item:last-child{
-  border-bottom:none;}
-.menu-list-item h4{
-  font-size:1.1rem;
-  margin-bottom:.3rem;}
-.menu-list-item p{
-  color:var(--text-muted);
-  font-size:.9rem;}
-.menu-list-item span{
-  color:var(--terracotta);
-  font-weight:600;
-  white-space:nowrap;}
-.featured{
-  background:rgba(201,152,58,0.08);
-  padding-left:1rem;
-  border-radius:10px;}
-
-  @media (max-width: 768px) {
-
-  nav { padding: 1rem 1rem; }
-
-  .hero-content {
-    padding: 6rem 1.2rem;
-    max-width: 100%; }
-
-  .menu-section,
-  .testimonials,
-  .reservation,
-  footer {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem; }
-
-  .menu-grid { grid-template-columns: 1fr; }
-
-  .about {
-    grid-template-columns: 1fr; gap: 2rem; }
-
-  .reservation {
-    grid-template-columns: 1fr; gap: 2rem; }
-
-  .form-row { grid-template-columns: 1fr; }
-
-  .gallery-strip { grid-template-columns: 1fr; height: auto; }
-
-  .badges-strip { flex-direction: column; padding: 1rem; gap: 1rem; }
-}
-
-.menu-toggle { display: none; font-size: 1.8rem; background: none; border: none; color: var(--cream); cursor: pointer; }
-
-/* MOBILE MENU PANEL */
-.mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: var(--warm-dark); z-index: 999; padding: 4rem 2rem; display: flex; flex-direction: column; gap: 2rem;
-  transition: right 0.4s ease;
-}
-
-.mobile-menu.open {
-  right: 0;
-}
-
-.mobile-menu a { color: var(--cream); text-decoration: none; font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase;
-}
-
-.mobile-menu button {
-  margin-top: auto;
-  padding: 1rem;
-  background: var(--terracotta);
-  border: none;
-  color: white;
-  font-size: 1rem;
-}
-
-/* nur mobil sichtbar */
-@media (max-width: 768px) {
-  .nav-links,
-  .nav-cta {
-    display: none;
-  }
-
-  .menu-toggle { display: block; color: var(--warm-dark);
-  }
-
-  nav.scrolled .menu-toggle { color: var(--terracotta);
-  }
-}
 </style>
 </head>
 <body>
@@ -335,18 +216,8 @@ body { -webkit-text-size-adjust: 100%; }
     <li><a href="#reservation">Reservierung</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('reservation').scrollIntoView({ behavior: 'smooth'})">Tisch reservieren</button>
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <button class="nav-cta">Tisch reservieren</button>
 </nav>
-<div id="mobileMenu" class="mobile-menu">
-<a href="#about" onclick="toggleMenu()">Über Uns</a>
-<a href="./menu.html" onclick="toggleMenu()">Speisekarte</a>
-<a href="#reservation" onclick="toggleMenu()">Reservierung</a>
-<a href="#contact" onclick="toggleMenu()">Kontakt</a>
-
-<button onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'}); toggleMenu();">
- Tisch Reservieren </button>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -358,7 +229,7 @@ body { -webkit-text-size-adjust: 100%; }
     </h1>
     <p class="hero-sub anim-fade-up d2">Authentische italienische Küche, zubereitet mit Rezepten aus vier Generationen und den besten Zutaten aus der Toskana.</p>
     <div class="hero-actions anim-fade-up d3">
-      <button class="btn-primary" onclick="window.location.href='./menu.html'">Speisekarte entdecken</button>
+      <button class="btn-primary">Speisekarte entdecken</button>
       <button class="btn-ghost">Reservierung</button>
     </div>
   </div>
@@ -410,7 +281,7 @@ body { -webkit-text-size-adjust: 100%; }
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
   <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=900&q=80" alt="Rustikales Interieur">
-  <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Frische Pasta">
+  <img src="https://images.unsplash.com/photo-1473093226555-0f258be8c8b0?w=500&q=80" alt="Frische Pasta">
   <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=500&q=80" alt="Wein">
   <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="Pizza">
 </div>
@@ -430,7 +301,7 @@ body { -webkit-text-size-adjust: 100%; }
       <p class="menu-price">€ 8,50</p>
     </div>
     <div class="menu-item reveal d2">
-      <img class="menu-img" src="https://images.unsplash.com/photo-1603661688298-870c8958ebf8?q=80&w=704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tagliatelle Ragù">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1551183053-bf91798d454f?w=600&q=80" alt="Tagliatelle Ragù">
       <p class="menu-category">Primo</p>
       <p class="menu-name">Tagliatelle al Ragù</p>
       <p class="menu-desc">Handgemachte Eiernudeln mit langsam geschmortem Rindfleisch-Ragù nach Nonnas Originalrezept.</p>
@@ -466,11 +337,9 @@ body { -webkit-text-size-adjust: 100%; }
     </div>
   </div>
   <div style="text-align:center; margin-top:3.5rem;" class="reveal">
-    <button class="btn-ghost" style="border-color:rgba(201,152,58,0.5); color:var(--gold);"
-  onclick="window.location.href='./menu.html'">Vollständige Speisekarte</button>
+    <button class="btn-ghost" style="border-color:rgba(201,152,58,0.5); color:var(--gold);">Vollständige Speisekarte</button>
   </div>
 </section>
-
 
 <div class="ornament reveal">— ✦ —</div>
 
@@ -576,21 +445,17 @@ body { -webkit-text-size-adjust: 100%; }
   <div class="footer-col">
     <h4>Navigation</h4>
     <ul>
-      <li><a href="./about.html">Über uns</a></li><li><a href="./menu.html">Speisekarte</a></li>
-      <li><a href="#">./galerry.html</a></li><li><a href="#">Reservierung</a></li>
+      <li><a href="#">Über uns</a></li><li><a href="#">Speisekarte</a></li>
+      <li><a href="#">Galerie</a></li><li><a href="#">Reservierung</a></li>
     </ul>
   </div>
-  
-<div class="footer-col">
-  <h4>Angebote</h4>
-  <ul>
-    <li><a href="./mittagsmenu.html">Mittagsmenü</a></li>
-    <li><a href="./weinauswahl.html">Weinauswahl</a></li>
-    <li><a href="./catering.html">Catering</a></li>
-    <li><a href="./separee.html">Séparée</a></li>
-  </ul>
-</div>
-
+  <div class="footer-col">
+    <h4>Angebote</h4>
+    <ul>
+      <li><a href="#">Mittagsmenü</a></li><li><a href="#">Weinauswahl</a></li>
+      <li><a href="#">Catering</a></li><li><a href="#">Séparée</a></li>
+    </ul>
+  </div>
   <div class="footer-col">
     <h4>Kontakt</h4>
     <ul>
@@ -622,20 +487,7 @@ body { -webkit-text-size-adjust: 100%; }
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
-function openMenu() {
-  document.getElementById("fullMenu")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-}
-
-function toggleMenu() {
-document.getElementById("mobileMenu").classList.toggle("open");
-}
-
 </script>
 </body>
 </html>
-
-
 
