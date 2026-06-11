@@ -209,6 +209,10 @@
   .menu-toggle span { width: 22px; height: 2px; background: var(--cream); transition: 0.3s; }
   .menu-toggle:hover span { background: var(--gold); }
   nav.scrolled .menu-toggle span { background: var(--warm-dark); }
+  .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .menu-toggle span { transition: transform 0.3s ease, opacity 0.3s ease; }
   /* =========================
    MOBILE OPTIMIERUNG
    ========================= */
@@ -767,6 +771,8 @@ if (menuToggle && navLinks) {
 
 document.addEventListener('click', (e) => {
   if (!navLinks || !menuToggle) return;
+
+const isClickInside = navLinks.contains(e.target) || menuToggle.contains(e.target);
 
   if (!isClickInside) {
     navLinks.classList.remove('open');
