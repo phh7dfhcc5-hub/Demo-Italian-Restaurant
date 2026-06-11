@@ -228,9 +228,9 @@
                background: rgba(245, 239, 224, 0.98); backdrop-filter: blur(10px); border-left: 1px solid rgba(0,0,0,0.08); 
                flex-direction: column; padding: 6rem 2rem; gap: 2rem;
                transform: translateX(100%); transition: transform 0.4s ease; z-index: 300; }
-
   .nav-links.open { transform: translateX(0); }
-
+  .nav-links a { color: var(--warm-dark); }
+  .nav-links a:hover { color: var(--terracotta); }
   /* ================= HERO ================= */
   .hero-content {
     padding: 6.5rem 1.2rem 3rem;
@@ -703,7 +703,7 @@
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
         // stagger siblings
-        const siblings = [...e.target.parentElement.children].filter(c => c.classList.contains('reveal') || c.classList.contains('reveal-left') || c.classList.contains('reveal-right'));
+        const siblings = [...e.target.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right')];
         const idx = siblings.indexOf(e.target);
         setTimeout(() => e.target.classList.add('visible'), idx * 120);
         observer.unobserve(e.target);
@@ -763,6 +763,15 @@ if (menuToggle && navLinks) {
     menuToggle.classList.toggle('active');
   });
 }
+
+document.addEventListener('click', (e) => {
+  if (!navLinks || !menuToggle) return;
+
+  if (!isClickInside) {
+    navLinks.classList.remove('open');
+    menuToggle.classList.remove('active');
+  }
+});
 
 </script>
 </body>
