@@ -209,104 +209,220 @@
    MOBILE OPTIMIERUNG
    ========================= */
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-  /* NAVIGATION */
-  nav { padding: 1rem 1.2rem; }
+  /* ================= NAV ================= */
+  nav {
+    padding: 0.9rem 1rem;
+  }
 
-  .nav-logo { font-size: 1.2rem; }
+  .nav-logo {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
 
-  .nav-links { gap: 1rem; }
+  /* Mobile Navigation kompakter */
+  .nav-links {
+    display: none; /* bewusst ausgeblendet für clean mobile UX */
+  }
 
-  .nav-cta { padding: 0.55rem 1rem; font-size: 0.7rem; }
+  .nav-cta {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.7rem;
+  }
 
-  /* HERO */
+  /* ================= HERO ================= */
+  .hero-content {
+    padding: 6.5rem 1.2rem 3rem;
+    max-width: 100%;
+  }
 
-  .hero-content { padding: 7rem 1.5rem 4rem; max-width: 100%; }
+  .hero-title {
+    font-size: 2.8rem;
+  }
 
-  .hero-title { font-size: 3rem; }
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 
-  .hero-sub { font-size: 0.95rem; line-height: 1.7; }
-
-  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
 
   .btn-primary,
-  .btn-ghost { width: 100%; text-align: center; }
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
 
-  /* BADGES */
+  /* ================= BADGES ================= */
+  .badges-strip {
+    padding: 1rem;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
 
-  .badges-strip { padding: 1rem; gap: 1rem; flex-wrap: wrap; }
+  .badge-text {
+    font-size: 0.65rem;
+  }
 
-  .badge-text { font-size: 0.65rem; }
+  /* ================= ABOUT ================= */
+  .about {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.2rem;
+    gap: 2rem;
+  }
 
-  /* ABOUT */
+  .about-text {
+    padding-left: 0;
+  }
 
-  .about { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+  .about-year {
+    width: 90px;
+    height: 90px;
+    right: -0.4rem;
+    bottom: -0.4rem;
+  }
 
-  .about-text { padding-left: 0; }
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
 
-  .about-year { width: 100px; height: 100px; right: -0.5rem; bottom: -0.5rem; }
-
-  .about-year .year { font-size: 1.7rem; }
-
-  .stats-row { gap: 1rem; justify-content: space-between; flex-wrap: wrap; }
-
-  /* GALLERY SWIPE */
-
-  .gallery-strip { display: flex; overflow-x: auto; overflow-y: hidden; height: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-
-  .gallery-strip::-webkit-scrollbar { display: none; }
+  /* ================= GALLERY (NEU: 1 IMAGE = FULL SWIPE) ================= */
+  .gallery-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    height: 260px;
+  }
 
   .gallery-strip img {
-    flex: 0 0 85%;
-    width: 85%;
+    flex: 0 0 100%;
+    width: 100%;
     height: 260px;
     object-fit: cover;
-    scroll-snap-align: center; }
+    scroll-snap-align: center;
+    filter: brightness(0.92);
+  }
 
-  /* MENU */
+  .gallery-strip::-webkit-scrollbar {
+    display: none;
+  }
 
-  .menu-section { padding: 4rem 1.5rem; }
+  /* DOTS (Gallery) */
+  .gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
 
-  .menu-grid { grid-template-columns: 1fr; }
+  .gallery-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(201, 152, 58, 0.35);
+    transition: 0.3s;
+  }
 
-  .menu-item { padding: 1.5rem; }
+  .gallery-dots span.active {
+    background: var(--gold);
+    transform: scale(1.2);
+  }
 
-  .menu-name { font-size: 1.4rem; }
+  /* ================= MENU ================= */
+  .menu-section {
+    padding: 4rem 1.2rem;
+  }
 
-  /* TESTIMONIALS SWIPE */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .testimonials { padding: 4rem 1.5rem; }
+  .menu-item {
+    padding: 1.4rem;
+  }
 
-  .testi-grid { display: flex; overflow-x: auto; overflow-y: hidden; gap: 1rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  /* ================= TESTIMONIALS (NEU: SWIPE + DOTS) ================= */
+  .testi-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+  }
 
-  .testi-grid::-webkit-scrollbar { display: none; }
+  .testi-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
 
-  .testi-card { flex: 0 0 88%; scroll-snap-align: center; }
+  .testi-grid::-webkit-scrollbar {
+    display: none;
+  }
 
-  .testi-text { font-size: 1rem; }
+  /* DOTS (Testimonials) */
+  .testi-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+  }
 
-  /* QUOTE */
+  .testi-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(201, 152, 58, 0.35);
+    transition: 0.3s;
+  }
 
-  .quote-section { padding: 5rem 1.5rem; background-attachment: scroll; }
+  .testi-dots span.active {
+    background: var(--gold);
+    transform: scale(1.2);
+  }
 
-  .quote-mark { font-size: 5rem; }
+  /* ================= QUOTE ================= */
+  .quote-section {
+    padding: 5rem 1.2rem;
+    background-attachment: scroll;
+  }
 
-  /* RESERVIERUNG */
+  .quote-mark {
+    font-size: 4.5rem;
+  }
 
-  .reservation { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+  /* ================= RESERVATION ================= */
+  .reservation {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.2rem;
+    gap: 3rem;
+  }
 
-  .form-row { grid-template-columns: 1fr; }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 
-  /* FOOTER */
+  /* ================= FOOTER ================= */
+  footer {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.2rem;
+    gap: 2rem;
+  }
 
-  footer { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; gap: 2rem; }
+  /* ================= TYPO ================= */
+  .section-title {
+    font-size: 2.1rem;
+  }
 
-  /* ALLGEMEIN */
-
-  .section-title { font-size: 2.2rem; }
-
-  .body-text { font-size: 0.92rem; }
+  .body-text {
+    font-size: 0.92rem;
+  }
 }
 </style>
 </head>
