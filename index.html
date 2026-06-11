@@ -707,6 +707,47 @@
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
+
+// ================= MOBILE DOT SYSTEM =================
+function createDots(container, count, className) {
+  const wrap = document.createElement('div');
+  wrap.className = className;
+
+  const dots = [];
+  for (let i = 0; i < count; i++) {
+    const dot = document.createElement('span');
+    wrap.appendChild(dot);
+    dots.push(dot);
+  }
+
+  container.parentNode.insertBefore(wrap, container.nextSibling);
+  return dots;
+}
+
+// Gallery dots
+const gallery = document.querySelector('.gallery-strip');
+const galleryDots = gallery ? createDots(gallery, 4, 'gallery-dots') : [];
+
+// Testimonials dots
+const testi = document.querySelector('.testi-grid');
+const testiDots = testi ? createDots(testi, 3, 'testi-dots') : [];
+
+// Active index helper
+function setActiveDots(container, dots, itemSelector) {
+  if (!container) return;
+
+  container.addEventListener('scroll', () => {
+    const items = container.querySelectorAll(itemSelector);
+    const index = Math.round(container.scrollLeft / container.offsetWidth);
+
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  });
+}
+
+// init
+setActiveDots(gallery, galleryDots, 'img');
+setActiveDots(testi, testiDots, '.testi-card');
+
 </script>
 </body>
 </html>
