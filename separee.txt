@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Séparée | Trattoria della Nonna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:#F5EFE0;
+  font-family:'Jost',sans-serif;
+  color:#1C1208;
+}
+
+/* HERO */
+.hero{
+  height:60vh;
+  background:url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(20,12,6,0.65);
+}
+
+.hero h1{
+  position:relative;
+  color:#F5EFE0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;
+  letter-spacing:0.12em;
+  text-align:center;
+}
+
+.hero p{
+  position:relative;
+  color:rgba(245,239,224,0.8);
+  margin-top:1rem;
+  text-align:center;
+  max-width:600px;
+}
+
+/* CONTENT */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:5rem 1.5rem;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:4rem;
+}
+
+.intro h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.6rem;
+  margin-bottom:1rem;
+}
+
+.intro p{
+  color:#6B5B42;
+  max-width:750px;
+  margin:auto;
+  line-height:1.9;
+}
+
+/* FEATURES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  transition:transform .3s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:1.4rem;
+}
+
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  margin-bottom:.5rem;
+}
+
+.card p{
+  font-size:.92rem;
+  color:#6B5B42;
+  line-height:1.7;
+}
+
+/* LUXURY SECTION */
+.luxury{
+  margin-top:5rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+
+.luxury img{
+  width:100%;
+  border-radius:16px;
+  object-fit:cover;
+  height:420px;
+}
+
+.luxury-text h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;
+  margin-bottom:1rem;
+}
+
+.luxury-text p{
+  color:#6B5B42;
+  line-height:1.9;
+  margin-bottom:1rem;
+}
+
+/* CTA */
+.cta{
+  margin-top:5rem;
+  text-align:center;
+  padding:4rem 2rem;
+  background:#1C1208;
+  color:#F5EFE0;
+  border-radius:18px;
+}
+
+.cta h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;
+  margin-bottom:1rem;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:1rem 2.2rem;
+  background:#C4622D;
+  color:white;
+  text-decoration:none;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.cta a:hover{
+  background:#a94f22;
+}
+
+/* BACK */
+.back{
+  text-align:center;
+  margin-top:4rem;
+}
+
+.back a{
+  color:#C4622D;
+  text-decoration:none;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+  .luxury{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div>
+    <h1>Séparée</h1>
+    <p>Ein privater Raum für besondere Momente – intim, elegant und exklusiv.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>Exklusivität in ruhiger Atmosphäre</h2>
+    <p>
+      Unser Séparée bietet Ihnen einen abgeschirmten Bereich für Feiern, Geschäftsessen oder romantische Abende.
+      Diskret, stilvoll und mit persönlichem Service.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1525268771113-32d9e9025b5c?auto=format&fit=crop&w=1200&q=80" alt="Privater Raum">
+      <div class="card-content">
+        <h3>Private Dining</h3>
+        <p>Ein exklusiver Raum nur für Sie und Ihre Gäste mit individuellem Service.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1200&q=80" alt="Wein und Dinner">
+      <div class="card-content">
+        <h3>Wine Experience</h3>
+        <p>Kuratiertes Weinpairing direkt im Séparée – abgestimmt auf Ihr Menü.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="Event Dinner">
+      <div class="card-content">
+        <h3>Private Events</h3>
+        <p>Geburtstage, Business-Dinner oder kleine Hochzeiten im exklusiven Rahmen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="luxury">
+    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80" alt="Elegantes Restaurant">
+    <div class="luxury-text">
+      <h3>Diskret. Elegant. Persönlich.</h3>
+      <p>Das Séparée wurde geschaffen, um Ihnen maximale Privatsphäre zu bieten – ohne auf den Service unserer Küche zu verzichten.</p>
+      <p>Jeder Tisch wird individuell betreut, jedes Menü speziell abgestimmt.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Reservieren Sie Ihr Séparée</h3>
+    <p>Für besondere Anlässe – exklusiv & limitiert verfügbar</p>
+    <a href="index.html#reservation">Anfrage senden</a>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Zurück zur Startseite</a>
+  </div>
+
+</div>
+
+</body>
+</html>

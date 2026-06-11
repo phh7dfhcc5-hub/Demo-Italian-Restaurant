@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | Trattoria della Nonna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Jost',sans-serif;
+  background:#F5EFE0;
+  color:#1C1208;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  background:#1C1208;
+  color:#F5EFE0;
+  text-align:center;
+  padding:5rem 2rem;
+}
+header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;
+  font-weight:300;
+}
+header p{
+  opacity:0.7;
+  margin-top:1rem;
+}
+
+/* SECTION */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+
+/* IMAGE CARD */
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1s forwards;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform 0.6s ease, filter 0.4s ease;
+  filter:brightness(0.92);
+}
+
+.card:hover img{
+  transform:scale(1.08);
+  filter:brightness(1);
+}
+
+/* OVERLAY */
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  opacity:0;
+  transition:0.4s;
+}
+.card:hover::after{
+  opacity:1;
+}
+
+/* CAPTION */
+.caption{
+  position:absolute;
+  bottom:1rem;
+  left:1rem;
+  color:white;
+  font-size:0.9rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.4s;
+}
+.card:hover .caption{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* STAGGER */
+.d1{animation-delay:.1s;}
+.d2{animation-delay:.2s;}
+.d3{animation-delay:.3s;}
+.d4{animation-delay:.4s;}
+.d5{animation-delay:.5s;}
+.d6{animation-delay:.6s;}
+
+/* HERO TEXT BLOCK */
+.intro{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.intro h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;
+  color:#C4622D;
+  margin-bottom:1rem;
+}
+.intro p{
+  color:#6B5B42;
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+}
+
+/* BACK */
+.back{
+  display:inline-block;
+  margin-top:4rem;
+  padding:1rem 2rem;
+  background:#C4622D;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+}
+.back:hover{
+  background:#a34f22;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie</h1>
+  <p>Ein Blick in unsere Trattoria</p>
+</header>
+
+<section>
+
+<div class="intro">
+  <h2>Momente aus der Küche & dem Restaurant</h2>
+  <p>
+    Jeder Teller, jeder Raum und jeder Moment erzählt eine Geschichte.
+    Hier bekommst du einen Einblick in unsere Welt der italienischen Küche.
+  </p>
+</div>
+
+<div class="grid">
+
+  <div class="card d1">
+    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1000&q=80" alt="">
+    <div class="caption">Restaurant Atmosphäre</div>
+  </div>
+
+  <div class="card d2">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80" alt="">
+    <div class="caption">Frische Küche</div>
+  </div>
+
+  <div class="card d3">
+    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1000&q=80" alt="">
+    <div class="caption">Traditionelle Gerichte</div>
+  </div>
+
+  <div class="card d4">
+    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1000&q=80" alt="">
+    <div class="caption">Wein Auswahl</div>
+  </div>
+
+  <div class="card d5">
+    <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=1000&q=80" alt="">
+    <div class="caption">Pasta Handgemacht</div>
+  </div>
+
+  <div class="card d6">
+    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&q=80" alt="">
+    <div class="caption">Desserts</div>
+  </div>
+
+</div>
+
+<div style="text-align:center;">
+  <a class="back" href="./restaurant.html">← Zurück zur Startseite</a>
+</div>
+
+</section>
+
+</body>
+</html>
