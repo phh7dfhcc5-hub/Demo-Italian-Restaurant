@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering | Trattoria della Nonna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Jost',sans-serif;
+  background:#F5EFE0;
+  color:#1C1208;
+}
+
+.hero{
+  height:50vh;
+  background:url('https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero h1{
+  position:relative;
+  color:#fff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  letter-spacing:0.08em;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:4rem 1.5rem;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:3rem;
+}
+
+.intro h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.5rem;
+  margin-bottom:1rem;
+}
+
+.intro p{
+  color:#6B5B42;
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:transform .3s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:1.2rem;
+}
+
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  margin:0 0 .5rem 0;
+}
+
+.card p{
+  font-size:.9rem;
+  color:#6B5B42;
+  line-height:1.6;
+}
+
+.price{
+  margin-top:1rem;
+  color:#C4622D;
+  font-weight:600;
+}
+
+.back{
+  text-align:center;
+  margin-top:4rem;
+}
+
+.back a{
+  display:inline-block;
+  padding:1rem 2rem;
+  background:#C4622D;
+  color:white;
+  text-decoration:none;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.back a:hover{
+  background:#a94f22;
+}
+
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Catering & Events</h1>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>Italienische Küche für besondere Momente</h2>
+    <p>
+      Ob Hochzeit, Firmenfeier oder privates Dinner – wir bringen die authentische
+      Küche der Trattoria direkt zu Ihnen. Frisch, hausgemacht und mit Liebe serviert.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" alt="Buffet">
+      <div class="card-content">
+        <h3>Classic Buffet</h3>
+        <p>Antipasti, Pasta, Fleischgerichte und Dessert-Auswahl im traditionellen Stil.</p>
+        <div class="price">ab 29€ p.P.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80" alt="Fine Dining">
+      <div class="card-content">
+        <h3>Fine Dining Menü</h3>
+        <p>Mehrgängiges Gourmet-Menü mit Service direkt vor Ort.</p>
+        <div class="price">ab 59€ p.P.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80" alt="Fingerfood">
+      <div class="card-content">
+        <h3>Italian Fingerfood</h3>
+        <p>Perfekt für Events, Meetings und Empfänge mit kleinen Häppchen.</p>
+        <div class="price">ab 19€ p.P.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="back">
+    <a href="restaurant.html">← Zurück zur Startseite</a>
+  </div>
+
+</div>
+
+</body>
+</html>

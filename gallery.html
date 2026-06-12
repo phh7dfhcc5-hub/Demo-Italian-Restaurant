@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | Trattoria della Nonna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Jost',sans-serif;
+  background:#F5EFE0;
+  color:#1C1208;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  background:#1C1208;
+  color:#F5EFE0;
+  text-align:center;
+  padding:5rem 2rem;
+}
+header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;
+  font-weight:300;
+}
+header p{
+  opacity:0.7;
+  margin-top:1rem;
+}
+
+/* SECTION */
+section{
+  max-width:1300px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+
+/* INTRO */
+.intro{
+  text-align:center;
+  margin-bottom:4rem;
+}
+.intro h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem;
+  color:#C4622D;
+  margin-bottom:1rem;
+}
+.intro p{
+  color:#6B5B42;
+  max-width:750px;
+  margin:auto;
+  line-height:1.8;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+
+/* CARD */
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.12);
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1s forwards;
+  height:260px;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s ease, filter 0.4s ease;
+  filter:brightness(0.92);
+}
+
+.card:hover img{
+  transform:scale(1.08);
+  filter:brightness(1);
+}
+
+/* overlay */
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+  opacity:0;
+  transition:0.4s;
+}
+.card:hover::after{
+  opacity:1;
+}
+
+/* caption */
+.caption{
+  position:absolute;
+  bottom:1rem;
+  left:1rem;
+  color:white;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.4s;
+}
+.card:hover .caption{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* animation */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* stagger */
+.d1{animation-delay:.1s;}
+.d2{animation-delay:.2s;}
+.d3{animation-delay:.3s;}
+.d4{animation-delay:.4s;}
+.d5{animation-delay:.5s;}
+.d6{animation-delay:.6s;}
+.d7{animation-delay:.7s;}
+.d8{animation-delay:.8s;}
+.d9{animation-delay:.9s;}
+
+/* back button */
+.back{
+  display:inline-block;
+  margin-top:4rem;
+  padding:1rem 2rem;
+  background:#C4622D;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+}
+.back:hover{
+  background:#a34f22;
+}
+
+/* mobile */
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+  .card{height:280px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie</h1>
+  <p>Einblicke in unsere Trattoria</p>
+</header>
+
+<section>
+
+<div class="intro">
+  <h2>Italienische Momente voller Geschmack</h2>
+  <p>
+    Unsere Küche lebt von echten Zutaten, traditionellen Rezepten und dem Anspruch,
+    jedes Gericht wie ein kleines Kunstwerk zu servieren.
+  </p>
+</div>
+
+<div class="grid">
+
+  <div class="card d1">
+    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1200&q=80" alt="">
+    <div class="caption">Restaurant Atmosphäre</div>
+  </div>
+
+  <div class="card d2">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="">
+    <div class="caption">Frische Küche</div>
+  </div>
+
+  <div class="card d3">
+    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80" alt="">
+    <div class="caption">Traditionelle Gerichte</div>
+  </div>
+
+  <div class="card d4">
+    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&q=80" alt="">
+    <div class="caption">Wein Auswahl</div>
+  </div>
+
+  <!-- 🔥 NEUES PASTA BILD -->
+  <div class="card d5">
+    <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pasta frisch">
+    <div class="caption">Pasta Handgemacht</div>
+  </div>
+
+  <div class="card d6">
+    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1200&q=80" alt="">
+    <div class="caption">Desserts</div>
+  </div>
+
+  <!-- EXTRA NEU -->
+  <div class="card d7">
+    <img src="https://images.unsplash.com/photo-1707870678076-40ba56a65ece?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <div class="caption">Hausgemachte Pasta Varianten</div>
+  </div>
+
+  <div class="card d8">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="">
+    <div class="caption">Italienische Vorspeisen</div>
+  </div>
+
+  <div class="card d9">
+    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=80" alt="">
+    <div class="caption">Frische Zutaten vom Markt</div>
+  </div>
+
+</div>
+
+<div style="text-align:center;">
+  <a class="back" href="./restaurant.html">← Zurück zur Startseite</a>
+</div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Über uns | Trattoria della Nonna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Jost',sans-serif;
+  background:#F5EFE0;
+  color:#1C1208;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  background:#1C1208;
+  color:#F5EFE0;
+  text-align:center;
+  padding:5rem 2rem;
+}
+header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;
+  font-weight:300;
+}
+header p{
+  opacity:0.7;
+  margin-top:1rem;
+}
+
+/* SECTION */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+
+/* TYPO */
+h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.3rem;
+  color:#C4622D;
+  margin-bottom:1rem;
+}
+p{
+  line-height:1.9;
+  color:#6B5B42;
+  margin-bottom:1rem;
+}
+
+/* GRID LAYOUT */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  margin-bottom:5rem;
+}
+
+/* IMAGES */
+.img{
+  width:100%;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+.img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.6s ease;
+}
+.img:hover img{
+  transform:scale(1.05);
+}
+
+/* ANIMATIONS */
+.slide-left{
+  opacity:0;
+  transform:translateX(-60px);
+  animation:slideIn 1s forwards;
+}
+.slide-right{
+  opacity:0;
+  transform:translateX(60px);
+  animation:slideIn 1s forwards;
+}
+
+@keyframes slideIn{
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* STAGGER */
+.d1{animation-delay:.2s;}
+.d2{animation-delay:.4s;}
+.d3{animation-delay:.6s;}
+
+/* STORY BLOCK */
+.story{
+  background:white;
+  padding:3rem;
+  border-radius:18px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* BACK BUTTON */
+.back{
+  display:inline-block;
+  margin-top:3rem;
+  padding:1rem 2rem;
+  background:#C4622D;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+}
+.back:hover{
+  background:#a34f22;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Über uns</h1>
+  <p>Tradition. Leidenschaft. Italien seit 1987.</p>
+</header>
+
+<section>
+
+<!-- STORY 1 -->
+<div class="grid">
+  <div class="story slide-left d1">
+    <h2>Unsere Geschichte</h2>
+    <p>
+      Die Trattoria della Nonna wurde 1987 von der Familie Moretti gegründet.
+      Was als kleines Familienrestaurant begann, ist heute ein Ort für echte italienische Küche geblieben.
+    </p>
+    <p>
+      Unsere Rezepte stammen direkt von unserer Nonna Giulia und wurden über Generationen weitergegeben.
+      Nichts ist industriell, alles ist handgemacht.
+    </p>
+  </div>
+
+  <div class="img slide-right d1">
+    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1000&q=80" alt="Restaurant Geschichte">
+  </div>
+</div>
+
+<!-- STORY 2 -->
+<div class="grid">
+  <div class="img slide-left d2">
+    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1000&q=80" alt="Frische Zutaten">
+  </div>
+
+  <div class="story slide-right d2">
+    <h2>Unsere Philosophie</h2>
+    <p>
+      Wir glauben, dass gutes Essen Zeit braucht. Deshalb bereiten wir alles frisch zu – täglich.
+    </p>
+    <p>
+      Unsere Pasta wird von Hand gerollt, unsere Saucen stundenlang reduziert und unsere Zutaten
+      stammen direkt aus Italien oder regionalen Bauernhöfen.
+    </p>
+  </div>
+</div>
+
+<!-- STORY 3 -->
+<div class="grid">
+  <div class="story slide-left d3">
+    <h2>Unsere Küche</h2>
+    <p>
+      Die Küche ist das Herz unserer Trattoria. Hier entsteht alles mit Ruhe, Erfahrung und Liebe zum Detail.
+    </p>
+    <p>
+      Jeder Teller erzählt eine Geschichte – von der Toskana bis nach Apulien.
+    </p>
+  </div>
+
+  <div class="img slide-right d3">
+    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1000&q=80" alt="Küche">
+  </div>
+</div>
+
+<!-- FINAL BLOCK -->
+<div class="story" style="text-align:center; margin-top:4rem;">
+  <h2>Ein Ort zum Ankommen</h2>
+  <p>
+    Mehr als ein Restaurant – ein Stück Italien in deiner Stadt.
+  </p>
+
+  <a class="back" href="./restaurant.html">← Zurück zur Startseite</a>
+</div>
+
+</section>
+
+</body>
+</html>
