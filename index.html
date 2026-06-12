@@ -209,8 +209,10 @@
   .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; z-index: 400; position: relative; }
   .menu-toggle span { width: 30px; height: 3px; background: var(--cream); transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
                       transform-origin: center; z-index: 400; }
-   nav { color: var(--cream); }
-   nav.scrolled { color: var(--warm-dark); }
+   nav {  }
+   nav.scrolled { background: rgba(245,239,224,0.95); backdrop-filter: blur(12px); border-color: rgba(196,98,45,0.15); }
+  .nav-links a { color: rgba(245,239,224,0.85); }
+  nav.scrolled .nav-links a { color: var(--warm-dark); }
   .menu-toggle:hover span { background: var(--gold); }
   nav.scrolled .menu-toggle span { background: var(--warm-dark); }
   nav.scrolled .menu-toggle.active span { background: var(--gold); }
@@ -699,7 +701,7 @@
     <ul>
       <li><a href="#">Via Roma 14</a></li><li><a href="#">+49 123 456 789</a></li>
       <li><a href="#">info@trattoria.de</a></li>
-      <li></li><a href="https://www.instagram.com/enes_isik01/"
+      <li><a href="https://www.instagram.com/enes_isik01/"
        target="_blank"
        rel="noopener noreferrer">
        Instagram
